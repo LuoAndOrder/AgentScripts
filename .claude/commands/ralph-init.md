@@ -9,7 +9,7 @@ Your task is to help the user create a PROMPT.md file for running Ralph loops wi
 
 The ralph-loop plugin runs Claude Code in an iterative loop until a completion promise is detected:
 ```bash
-/ralph-loop @PROMPT.md --completion-promise "RALPH_COMPLETE" --max-iterations 50
+/ralph-loop:ralph-loop @PROMPT.md --completion-promise "RALPH_COMPLETE" --max-iterations 50
 ```
 
 Each iteration, Claude sees the same prompt but with modified files and git history from previous iterations. Key principles:
@@ -109,7 +109,7 @@ To start your Ralph loop:
    /plugin → search "ralph-loop" → Space to select → "i" to install
 
 2. Start the loop:
-   /ralph-loop @PROMPT.md --completion-promise "RALPH_COMPLETE" --max-iterations 50
+   /ralph-loop:ralph-loop @PROMPT.md --completion-promise "RALPH_COMPLETE" --max-iterations 50
 
 3. Monitor progress:
    - Watch the terminal or check back periodically
