@@ -1,6 +1,6 @@
 ---
 name: rust-best-practices
-description: Pragmatic Rust guidelines for writing idiomatic, safe, and performant Rust code. Use when writing, reviewing, refactoring, or designing Rust APIs, error handling, unsafe code, FFI, async patterns, or library architecture.
+description: ALWAYS invoke this skill when writing, editing, or generating ANY Rust code. This skill provides comprehensive Rust best practices from 5 authoritative sources (Microsoft guidelines, official API guidelines, style guide, language reference, and design patterns). Use for ALL Rust tasks including: writing new code, reviewing code, refactoring, fixing bugs, designing APIs, error handling, unsafe code, FFI, async patterns, macros, testing, or library development. This skill should be loaded proactively whenever Rust (.rs) files are involved.
 ---
 
 # Rust Best Practices
