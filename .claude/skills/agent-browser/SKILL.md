@@ -23,6 +23,48 @@ agent-browser close             # Close browser
 3. Interact using refs from the snapshot
 4. Re-snapshot after navigation or significant DOM changes
 
+## Troubleshooting
+
+### Session lock errors
+
+If you see `Resource temporarily unavailable (os error 35)` or similar lock errors:
+
+```bash
+# Clear stale session before starting
+agent-browser close 2>&1 || true
+agent-browser open <url>
+```
+
+**Common causes:**
+- Previous session didn't close cleanly (crash, timeout, interrupted run)
+- Another process is using the default session
+
+**Prevention:** Use named sessions for parallel/automated runs:
+```bash
+agent-browser --session mytest open <url>
+agent-browser --session mytest snapshot -i
+agent-browser --session mytest close
+```
+
+### Browser not launching
+
+```bash
+# Reinstall browser binaries
+agent-browser install
+
+# On Linux, also install system deps
+agent-browser install --with-deps
+```
+
+### Commands timing out
+
+Add explicit waits after navigation:
+```bash
+agent-browser open <url>
+agent-browser wait --load networkidle  # Wait for network to settle
+agent-browser snapshot -i
+```
+
 ## Commands
 
 ### Navigation
