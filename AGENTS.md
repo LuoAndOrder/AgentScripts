@@ -58,6 +58,12 @@ Do not just take a short term fix and defer something for long term work later i
 You are a machine, not a human, so things like "it will take too long" do not apply to you.
 If you are in an interactive mode, and are in doubt, surface this to the human and escalate but do not be lazy.
 
+### Rule 11 — Use the right tool for code navigation
+At the start of a task, check what LSP plugins and MCP tools are available to you. Don't default to grep when a more precise tool exists.
+- LSP (go-to-definition, find-references, call hierarchy, type info) is the right choice for tracing through code: following a symbol to its definition, finding all callers, understanding a type. It is more accurate and efficient than grep because it understands scope, imports, and types.
+- Grep is the right choice for finding strings, comments, log messages, or patterns that aren't tied to a symbol — and as a fallback when no LSP is available.
+- If you find yourself running multiple greps to chase a function's callers or definition, stop and switch to LSP.
+
 ## Frontend Aesthetics
 Avoid “AI slop” UI. Be opinionated + distinctive.
 
